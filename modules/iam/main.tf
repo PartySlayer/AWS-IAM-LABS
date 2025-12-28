@@ -5,7 +5,7 @@ resource "aws_iam_group" "juniors" {
 }
 
 resource "aws_iam_group" "seniors" {
-  name = "SeniorDevOps"
+  name = "SeniorDevelopers"
 }
 
 resource "aws_iam_user" "alessandro" {
