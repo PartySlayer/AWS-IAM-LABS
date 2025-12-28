@@ -35,30 +35,53 @@ resource "aws_iam_user_group_membership" "beatrice_membership" {
 
 data "aws_iam_policy_document" "junior_access" {
   statement {
-    sid    = "AllowListAndRead"
+    sid    = "S3GetOnly"
     effect = "Allow"
     actions = [
-      "s3:ListBucket",
       "s3:GetObject"
     ]
     resources = [
       var.bucket_arn,
       "${var.bucket_arn}/*"
     ]
+    condition {
+      test     = "Bool"
+      variable = "aws:MultiFactorAuthPresent"
+      values   = ["true"]
+    }
+  }
+  statement {
+    sid    = "AllowListAlways"
+    effect = "Allow"
+    actions = ["s3:ListBucket"]
+    resources = [var.bucket_arn]
   }
 }
 
 data "aws_iam_policy_document" "senior_access" {
   statement {
-    sid    = "AllowFullS3Access"
+    sid    = "S3FullObject"
     effect = "Allow"
     actions = [
-      "s3:*"
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:DeleteObject"
     ]
     resources = [
       var.bucket_arn,
       "${var.bucket_arn}/*"
     ]
+    condition {
+      test     = "Bool"
+      variable = "aws:MultiFactorAuthPresent"
+      values   = ["true"]
+    }
+  }
+  statement {
+    sid    = "AllowListAlways"
+    effect = "Allow"
+    actions = ["s3:ListBucket"]
+    resources = [var.bucket_arn]
   }
 }
 
