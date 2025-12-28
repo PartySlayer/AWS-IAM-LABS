@@ -6,10 +6,12 @@ Questo progetto nasce dalla necessità di simulare una gestione degli accessi En
 
 L'obiettivo è dimostrare come blindare le risorse critiche (S3) non solo tramite permessi statici, ma attraverso condizioni di sicurezza dinamiche, come l'obbligo di autenticazione Multi-Factor (MFA) per le operazioni distruttive.
 
-<img width="647" height="350" alt="image" src="https://github.com/user-attachments/assets/c0e5ecd6-92f1-462e-a996-61ecd530d1c8" />
+<img width="649" height="352" alt="image" src="https://github.com/user-attachments/assets/fcb18f8d-de98-4a58-a296-dbafebb34022" />
 
 
 ## 🏗️ Architettura & Sicurezza
+
+<img width="671" height="541" alt="iam-s3" src="https://github.com/user-attachments/assets/ffefcd71-61de-43b1-b61f-a4511c10669e" />
 
 Il deployment è **completamente gestito tramite Terraform** e si poggia su tre pilastri:
 
