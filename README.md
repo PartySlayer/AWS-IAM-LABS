@@ -1,32 +1,21 @@
-# POLICY AS CODE
+# ☁️ AWS IAM & Security Labs
 
-## IaC + IAM = policy-as-code
+> **Un percorso progressivo all'interno dei servizi AWSdi  Identity, Access Management, e Security Operations via Terraform.**
 
-Questo progetto nasce dalla necessità di simulare una gestione degli accessi Enterprise-Grade su AWS, applicando i principi di sicurezza standard (Least Privilege, Zero Trust) e la Compliance automatizzata.
+In questa raccolta di laboratori pratici, affrontiamo diversi scenari di sicurezza reali, partendo dalle basi fino a configurazioni avanzate.
 
-L'obiettivo è dimostrare come blindare le risorse critiche (S3) non solo tramite permessi statici, ma attraverso condizioni di sicurezza dinamiche, come l'obbligo di autenticazione Multi-Factor (MFA) per le operazioni distruttive.
+L'approccio è **Infrastructure as Code (IaC)**: ogni scenario è completamente riproducibile e autodocumentato.
 
-<img width="649" height="352" alt="image" src="https://github.com/user-attachments/assets/fcb18f8d-de98-4a58-a296-dbafebb34022" />
+## 🧪 Laboratori Disponibili
 
+| Livello | Lab ID | Titolo | Focus Tecnico | Stato |
+| :---: | :--- | :--- | :--- | :--- |
+| 🟢 | **01** | [**Secure RBAC Playground**](./labs/01-rbac-playground) | IAM Users, Groups, MFA Enforcement, S3 Encryption, PGP Secrets | ✅ Completato |
+| 🟡 | **02** | **The Role Principle** | Eliminare gli IAM Users, EC2 Instance Profiles, `sts:AssumeRole` | 🚧 Coming Soon |
+| 🔴 | **03** | **Secrets & Network Isolation** | AWS Secrets Manager, KMS, VPC Endpoints & Bucket Policies | 🔒 Locked |
 
-## 🏗️ Architettura & Sicurezza
+## 🛠️ Tech Stack Globale
 
-<img width="671" height="541" alt="iam-s3" src="https://github.com/user-attachments/assets/ffefcd71-61de-43b1-b61f-a4511c10669e" />
-
----
-
-Il deployment è **completamente gestito tramite Terraform** e si poggia su tre pilastri:
-
-* **S3 Hardening**: Bucket configurato con Server-Side Encryption (AES256) e Public Access Block attivo.
-
-* **RBAC (Role-Based Access Control)**: Separazione netta tra profili Junior (Read-Only) e Senior (Write/Delete).
-
-* **MFA Enforcement**: Una policy condizionale che nega esplicitamente le azioni di scrittura ai profili Senior se non è presente un token MFA attivo nella sessione.
-
-## 🛠️ Tech Stack
-
-Infrastructure as Code: Terraform
-
-Cloud Provider: AWS (IAM, S3)
-
-Security Tools: IAM Policy Conditions, MFA, Global Condition Keys
+* **Core:** Terraform, AWS CLI
+* **Security:** GPG/PGP (per gestione segreti), IAM Policy Simulator
+* **Architecture:** Modular Design (DRY)
