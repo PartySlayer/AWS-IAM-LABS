@@ -44,3 +44,16 @@ Le credenziali non vengono mai salvate su disco: sono generate dinamicamente dal
 
 ```bash
 terraform destroy
+```
+
+### 🏁 Prossimo Step: Lab 03 (Secrets & Lambda)
+
+Con il Lab 02 hai messo in sicurezza le **Compute Resources**.
+Ma cosa succede se la tua app ha bisogno di una password per un Database esterno o una API Key di terze parti? Quelle non le gestisce IAM.
+
+Nel **Lab 03**, alzeremo l'asticella:
+* Creeremo un **Secret** in AWS Secrets Manager (generato da Terraform).
+* Useremo una **Lambda Function** (Python) per recuperarlo a runtime.
+* Dimostreremo che nessuno (nemmeno lo sviluppatore) deve conoscere la password reale.
+
+Sei pronto a sporcarti le mani con un po' di Python e Lambda? 🐍
