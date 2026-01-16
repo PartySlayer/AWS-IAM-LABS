@@ -10,7 +10,7 @@ L'approccio è **Infrastructure as Code (IaC)**: ogni scenario è completamente 
 
 | Livello | Lab ID | Titolo | Focus Tecnico | Stato |
 | :---: | :--- | :--- | :--- | :--- |
-| 🟢 | **01** | [**Secure RBAC Playground**](./labs/01-rbac-playground) | IAM Users, Groups, MFA Enforcement, S3 Encryption, PGP Secrets | ✅ Completato |
+| 🟢 | **01** | [**Policy-as-code**](./labs/01-policy-as-code) | IAM Users, Groups, MFA Enforcement, S3 Encryption, PGP Secrets | ✅ Completato |
 | 🟡 | **02** | **The Role Principle** | Eliminare gli IAM Users, EC2 Instance Profiles, `sts:AssumeRole` | 🚧 Coming Soon |
 | 🔴 | **03** | **Secrets & Network Isolation** | AWS Secrets Manager, KMS, VPC Endpoints & Bucket Policies | 🔒 Locked |
 
