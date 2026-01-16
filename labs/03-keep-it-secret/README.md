@@ -45,4 +45,3 @@ A runtime, interroga le API AWS per ottenere la password decifrata, usandola sol
 
    ```bash
     terraform destroy
-    ```
