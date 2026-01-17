@@ -54,7 +54,9 @@ resource "aws_s3_bucket_policy" "network_restriction" {
   })
 }
 
-# EC2 per il test
+# ---- EC2 per il test
+
+# IAM della EC2
 resource "aws_iam_role" "ec2_role" {
   name = "${var.project_name}-role"
   assume_role_policy = jsonencode({
@@ -77,7 +79,7 @@ resource "aws_iam_instance_profile" "ec2_profile" {
   role = aws_iam_role.ec2_role.name
 }
 
-# Security Group
+# Security Group della EC2
 resource "aws_security_group" "allow_ssh" {
   vpc_id = module.vpc.vpc_id
   name   = "allow_ssh"
